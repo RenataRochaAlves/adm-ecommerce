@@ -1,0 +1,120 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+}
+
+header img {
+    width: 40px;
+    height: auto;
+    margin: 10px;
+}
+
+header nav {
+    width: 80%;
+}
+
+header nav ul li{
+    display: inline;
+    text-transform: uppercase;
+    margin-right: 2%;
+    color: #fc573b;
+    font-size: ;
+    letter-spacing: 1px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #fc573b;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+header nav ul li a:hover {
+    color: #ffe6e2;
+    background-color: #fc573b;
+}
+
+main {
+    display: flex;
+    height: 650px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+main h3 {
+    color: white;
+    font-size: 1.8rem;
+    padding: 15px;
+}
+
+#form {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    flex-flow: column nowrap;
+    padding: 10px;
+}
+
+#form div {
+    width: 70%;
+}
+
+#form div input {
+    width: 400px;
+    padding: 8px;
+    margin-top: 10px;
+    border: none;
+}
+
+#nome, #descricao, #preco, #foto label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: rgb(56, 56, 56);
+}
+
+#descricao textarea {
+    width: 400px;
+    padding: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+#form button {
+    font-size: 1.1rem;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background-color: #fc573b;
+    padding: 10px;
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
