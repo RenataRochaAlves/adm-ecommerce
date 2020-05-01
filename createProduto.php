@@ -1,6 +1,6 @@
 <?php 
 
-$menu = ["Criar Produto", "Lista de Produtos", "Produto", "Editar Produto", "Cadastrar Usuário", "Login"];
+$menu = ["Criar Produto", "Lista de Produtos", "Produto", "Editar Produto"];
 
 $nome = $_POST['nomeProduto'];
 $descricao = $_POST['descricaoProduto'];
@@ -22,23 +22,34 @@ if($_POST == false){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Adicionar Novo Produto | E-commerce</title>
+    <title>Adicionar Novo Produto | PetShop</title>
 </head>
 <body>
     <header>
-        <img src="img/e-commerce.png" alt="E-commerce Logo">
-        <nav>
+        <div>
+            <img src="img/031-paw.png" alt="E-commerce Logo">
+            <h2>PetShop</h2>
+        </div>
+        <nav class="menu">
             <ul>
                 <?php foreach($menu as $value): ?>
                 <li><a href="#"><?= $value ?></a></li>
                 <?php endforeach ?>
             </ul>
         </nav>
+        <nav class="login">
+            <ul>
+                <li><a href="">Cadastre-se</a></li>
+                <li><a href="">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-    <h3>Adicionar Novo Produto</h3>
-        <div id="form">
+        <div id="conteudo">
+
+            <h3>Adicionar Novo Produto</h3>
+
             <form action="createProduto.php" method="POST">
 
                 <div id="nome">
@@ -56,14 +67,30 @@ if($_POST == false){
                     <input type="number" step=0.01 name="precoProduto" id="precoProduto" value="<?= $preco ?>" placeholder="35,99" required><br>
                 </div>
 
-                <div id="foto">
-                <label for="fotoProduto">Imagem do Produto</label><br>
-                    <input type="file" name="fotoProduto" id="fotoProduto" value="<?= $foto ?>" required><br>
+                <div>
+                    <label for="foto">Selecione a imagem do produto</label><br>
+                    <label class="imagem">
+                        <!-- estando dentro da mesma label tudo se torna clicável e funcional -->
+                        <img src="img/imagem.png" id="foto-carregada"><br>
+                        <input type="file" name="foto" id="foto" accept=".jpg,.jpeg,.png,.gif"><br>
+                    </label>
                 </div>
 
+                <div>
                 <button type="submit">Enviar</button>
+                </div>
             </form>
         </div>
     </main>
+
+    <footer>
+        <nav class="menu-footer">
+                <ul>
+                    <?php foreach($menu as $value): ?>
+                    <li><a href="#"><?= $value ?></a></li>
+                    <?php endforeach ?>
+                </ul>
+            </nav>
+    </footer>
 </body>
 </html>

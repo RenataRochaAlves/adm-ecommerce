@@ -8,12 +8,25 @@ html {
     font-size: 14px;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-image: url(../img/background.jpg);
-    background-attachment: fixed;
-    background-size: cover;
+@font-face {
+    font-family: avenir;
+    src: url(../font/Avenir.ttc);
 }
+
+@font-face {
+    font-family: avenirnext;
+    src: url(../font/Avenir\ Next.ttc);
+}
+
+body {
+    font-family: avenir, avenirnext;
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* aqui começa o header */
 
 header {
     display: flex;
@@ -26,23 +39,50 @@ header {
     width: 100%;
 }
 
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 header img {
     width: 40px;
     height: auto;
     margin: 10px;
 }
 
+header h2 {
+    font-family: avenirnext;
+    font-size: 16px;
+    color: #71b0d4;
+}
+
 header nav {
-    width: 80%;
+    display: inline-block;
+}
+
+.menu {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.login {
+    width: 15%;
+} 
+
+header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul li{
-    display: inline;
-    text-transform: uppercase;
+    display: inline-block;
+    font-family: avenirnext;
     margin-right: 2%;
     color: #fc573b;
-    font-size: ;
-    letter-spacing: 1px;
+    font-size: 16px;
 }
 
 header nav ul li a{
@@ -58,63 +98,134 @@ header nav ul li a:hover {
     background-color: #fc573b;
 }
 
+/* aqui começa o formulário de cadastro de produtos */
+
 main {
     display: flex;
     height: 650px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#conteudo {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(246, 243, 252);
+    flex-flow: column nowrap;
+    padding: 10px;
+    margin-top: 120px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding-bottom: 69px;
+    /* padding-left: 150px; */
+    color: rgb(112, 108, 117);
+}
+
+#conteudo h3{
+    font-family: avenirnext;
+    color: rgb(33, 26, 41);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#conteudo form {
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-main h3 {
-    color: white;
-    font-size: 1.8rem;
-    padding: 15px;
-}
-
-#form {
-    display: flex;
+#conteudo div {
     width: 60%;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 0.7);
-    flex-flow: column nowrap;
-    padding: 10px;
+    /* margin-left: 25%; */
+    margin-top: 5px;
 }
 
-#form div {
-    width: 70%;
-}
-
-#form div input {
-    width: 400px;
+#conteudo div input {
+    width: 100%;
     padding: 8px;
     margin-top: 10px;
+    margin-bottom: 10px;
     border: none;
+    border-radius: 15px;
+    color: rgb(67, 60, 75);
 }
 
 #nome, #descricao, #preco, #foto label {
     margin-top: 15px;
     margin-bottom: 10px;
-    letter-spacing: 1px;
-    color: rgb(56, 56, 56);
+    color: rgb(112, 108, 117);
 }
 
 #descricao textarea {
-    width: 400px;
+    width: 100%;
+    height: 100px;
     padding: 8px;
     border: none;
+    border-radius: 15px;
     margin-top: 10px;
 }
 
-#form button {
-    font-size: 1.1rem;
-    border-radius: 20px;
+.imagem img {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 40%;
+}
+
+.imagem input[type=file]{
+    display: none;
+}
+
+
+#conteudo button {
+    width: 100%;
+    font-size: 14px;
+    font-family: avenirnext;
+    border-radius: 12px;
     border: none;
     color: white;
-    background-color: #fc573b;
+    background-color: #80c0e4;
     padding: 10px;
-    width: 400px;
-    margin-top: 10px;
+    /* margin-left: 180px; */
     margin-bottom: 10px;
+}
+
+#conteudo button:hover {
+    background-color: #71b0d4;
+}
+
+/* aqui começa o footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #71b0d4;
+    margin-top: 19%;
+}
+
+.menu-footer {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-footer ul li {
+    display: inline;
+    list-style: none;
+    font-family: avenirnext;
+    color: white;
+    padding: 10px;
+}
+
+.menu-footer ul li a {
+    color: white;
+    text-decoration: none;
 }
 
