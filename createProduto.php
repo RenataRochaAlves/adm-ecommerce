@@ -1,8 +1,16 @@
 <?php 
 
-include('includes/functions.php');
+require('includes/functions.php');
 
-$menu = ["Criar Produto", "Lista de Produtos", "Produto", "Editar Produto"];
+
+$menu = [["nome" => "Criar Produto", 
+        "link" => "createProduto.php"],
+        ["nome" => "Lista de Produtos",
+        "link" => "indexProdutos.php"],
+        ["nome" => "Produto",
+        "link" => "#"],
+        ["nome" => "Editar Produto",
+        "link" => "#"]];
 
 $nome = "";
 $descricao = "";
@@ -14,25 +22,27 @@ if($_POST){
     $nome = $_POST['nomeProduto'];
     $descricao = $_POST['descricaoProduto'];
     $preco = $_POST['precoProduto'];
-}
 
 // verifica se foi enviado algum arquivo
-if($_FILES) {
-    // Separando informações uteis do $_FILES
-    $tmpName = $_FILES['foto']['tmp_name'];
-    $fileName = uniqid() . '-' . $_FILES['foto']['name'];
-    $error = $_FILES['foto']['error'];
+    if($_FILES) {
+        // Separando informações uteis do $_FILES
+        $tmpName = $_FILES['fotoProduto']['tmp_name'];
+        $fileName = uniqid() . '-' . $_FILES['fotoProduto']['name'];
+        $error = $_FILES['fotoProduto']['error'];
 
-    // Salvar o arquivo numa pasta do meu sistema
-    move_uploaded_file($tmpName,'../img/usuarios/'.$fileName);
+        // Salvar o arquivo numa pasta do meu sistema
+        if($error == 0){
+            move_uploaded_file($tmpName,'img/produtos/'.$fileName);
 
-    // Salvar o nome do arquivo em $imagem
-    $imagem ='../img/produtos/'.$fileName;
+        // Salvar o nome do arquivo em $imagem
+        $imagem ='img/produtos/'.$fileName;
 
-} else {
-   $imagem = null; 
+        } else {
+            $imagem = null; 
+        }
+    }
+    addProduto($nome, $descricao, $preco, $imagem);
 }
-
 // criando a verificação de dados
 
 // $nomeOk = true;
@@ -49,7 +59,6 @@ if($_FILES) {
 //     }
 // }
 
-addProduto($nome, $descricao, $preco, $imagem);
 
 ?>
 
@@ -70,14 +79,14 @@ addProduto($nome, $descricao, $preco, $imagem);
         <nav class="menu">
             <ul>
                 <?php foreach($menu as $value): ?>
-                <li><a href="#"><?= $value ?></a></li>
+                <li><a href="<?= $value['link'] ?>"><?= $value['nome'] ?></a></li>
                 <?php endforeach ?>
             </ul>
         </nav>
         <nav class="login">
             <ul>
-                <li><a href="">Cadastre-se</a></li>
-                <li><a href="">Login</a></li>
+                <li><a href="createUsuario.php">Cadastre-se</a></li>
+                <li><a href="loginUsuario.php">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -111,7 +120,7 @@ addProduto($nome, $descricao, $preco, $imagem);
                     <label class="imagem">
                         <!-- estando dentro da mesma label tudo se torna clicável e funcional -->
                         <img src="img/imagem.png" id="foto-carregada"><br>
-                        <input type="file" name="foto" id="foto" accept=".jpg,.jpeg,.png,.gif"><br>
+                        <input type="file" name="fotoProduto" id="foto" accept=".jpg,.jpeg,.png,.gif"><br>
                     </label>
                 </div>
 
@@ -124,11 +133,11 @@ addProduto($nome, $descricao, $preco, $imagem);
 
     <footer>
         <nav class="menu-footer">
-                <ul>
-                    <?php foreach($menu as $value): ?>
-                    <li><a href="#"><?= $value ?></a></li>
-                    <?php endforeach ?>
-                </ul>
+            <ul>
+                <?php foreach($menu as $value): ?>
+                <li><a href="<?= $value['link'] ?>"><?= $value['nome'] ?></a></li>
+                <?php endforeach ?>
+            </ul>
             </nav>
     </footer>
 </body>
