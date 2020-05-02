@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: avenir;
+    src: url(../font/Avenir.ttc);
+}
+
+@font-face {
+    font-family: avenirnext;
+    src: url(../font/Avenir\ Next.ttc);
+}
+
+body {
+    font-family: avenir, avenirnext;
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+/* aqui começa o header */
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 40px;
+    height: auto;
+    margin: 10px;
+}
+
+header h2 {
+    font-family: avenirnext;
+    font-size: 16px;
+    color: #71b0d4;
+}
+
+header nav {
+    display: inline-block;
+}
+
+.menu {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.login {
+    width: 15%;
+} 
+
+header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li{
+    display: inline-block;
+    font-family: avenirnext;
+    margin-right: 2%;
+    color: #fc573b;
+    font-size: 16px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #fc573b;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+header nav ul li a:hover {
+    color: #ffe6e2;
+    background-color: #fc573b;
+}
+
+/* aqui começa o formulário de cadastro de produtos */
+
+main {
+    display: flex;
+    height: 650px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#conteudo {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(246, 243, 252);
+    flex-flow: column nowrap;
+    padding: 10px;
+    padding-bottom: 120px;
+    margin-top: 120px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    color: rgb(112, 108, 117);
+}
+
+#conteudo h3{
+    font-family: avenirnext;
+    color: rgb(59, 43, 77);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* aqui começa a lista de produtos */
+.cabecalho {
+    display: flex;
+    width: 80%;
+    align-items: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid rgb(196, 179, 216);
+}
+
+.cabecalho li {
+    display: inline-block;
+    list-style: none;
+    font-family: avenirnext;
+    font-size: 16px;
+    color: rgb(148, 119, 179);
+}
+
+.cabecalho li a {
+    text-decoration: none;
+    color: rgb(148, 119, 179);
+}
+
+.cabecalho li:nth-child(1){
+    margin-right: 5%;
+}
+
+.cabecalho li:nth-child(2){
+    margin-right: 27%;
+}
+
+.cabecalho li:nth-child(3){
+    margin-right: 25%;
+}
+
+.cabecalho li:nth-child(4){
+    margin-right: 5%;
+}
+
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid rgb(196, 179, 216);
+}
+
+
+.produto ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produto ul li {
+    font-size: 14px;
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.produto ul li a {
+    text-decoration: none;
+    color: rgb(148, 119, 179);
+}
+
+.produto ul li:nth-child(5) {
+    margin-right: 0px;
+    text-align: center;
+}
+
+
+/* aqui começa o footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #71b0d4;
+    margin-top: 18%;
+}
+
+.menu-footer {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-footer ul li {
+    display: inline;
+    list-style: none;
+    font-family: avenirnext;
+    color: white;
+    padding: 10px;
+}
+
+.menu-footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
