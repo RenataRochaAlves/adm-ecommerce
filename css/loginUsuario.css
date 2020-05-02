@@ -1,0 +1,217 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: avenir;
+    src: url(../font/Avenir.ttc);
+}
+
+@font-face {
+    font-family: avenirnext;
+    src: url(../font/Avenir\ Next.ttc);
+}
+
+body {
+    font-family: avenir, avenirnext;
+    background-image: url(../img/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+/* aqui começa o header */
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    background-color: white;
+    width: 100%;
+}
+
+header div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+header img {
+    width: 40px;
+    height: auto;
+    margin: 10px;
+}
+
+header h2 {
+    font-family: avenirnext;
+    font-size: 16px;
+    color: #71b0d4;
+}
+
+header nav {
+    display: inline-block;
+}
+
+.menu {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.login {
+    width: 15%;
+} 
+
+header nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li{
+    display: inline-block;
+    font-family: avenirnext;
+    margin-right: 2%;
+    color: #fc573b;
+    font-size: 16px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    color: #fc573b;
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+header nav ul li a:hover {
+    color: #ffe6e2;
+    background-color: #fc573b;
+}
+
+/* aqui começa o formulário de cadastro de produtos */
+
+main {
+    display: flex;
+    height: 650px;
+    align-items: center;
+    flex-direction: column;
+}
+
+#conteudo {
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(246, 243, 252);
+    flex-flow: column nowrap;
+    padding: 10px;
+    padding-bottom: 200px;
+    margin-top: 120px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    color: rgb(112, 108, 117);
+}
+
+#conteudo h3{
+    font-family: avenirnext;
+    color: rgb(59, 43, 77);
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* aqui começa o formulário de login */
+
+#conteudo form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#conteudo div {
+    width: 50%;
+    /* margin-left: 25%; */
+    margin-top: 5px;
+}
+
+
+#conteudo div input {
+    width: 100%;
+    padding: 8px;
+    padding-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 15px;
+    color: rgb(67, 60, 75);
+    font-size: 12px;
+}
+
+#conteudo div ::-webkit-input-placeholder {
+    color: rgb(188, 183, 194);
+}
+
+
+#conteudo button {
+    width: 50%;
+    font-size: 14px;
+    font-family: avenirnext;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background-color: #80c0e4;
+    padding: 10px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+#conteudo button:hover {
+    background-color: #71b0d4;
+}
+
+
+/* aqui começa o footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #71b0d4;
+}
+
+.menu-footer {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-footer ul li {
+    display: inline;
+    list-style: none;
+    font-family: avenirnext;
+    color: white;
+    padding: 10px;
+}
+
+.menu-footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
