@@ -183,6 +183,14 @@ main {
     background-color: #71b0d4;
 }
 
+.imagem-fundo {
+    width: 10%;
+}
+
+.imagem-fundo img {
+    width: 100%;
+}
+
 
 /* aqui começa o footer */
 
@@ -192,6 +200,7 @@ footer {
     align-items: center;
     width: 100%;
     height: 100px;
+    margin-top: 25%;
     background-color: #71b0d4;
 }
 

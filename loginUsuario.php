@@ -65,9 +65,13 @@ if($_POST){
                 </div>
 
                 <button type="submit">Enviar</button>
+                </form>
+                
+                <div class="imagem-fundo">
+                    <img src="img/044-paw-1.png" alt="certificado">
                 </div>
-            </form>
 
+        </div>
     </main>
 
     <footer>
