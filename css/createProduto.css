@@ -24,6 +24,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
 }
 
 /* aqui começa o header */
@@ -118,14 +120,12 @@ main {
     margin-top: 120px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    padding-bottom: 69px;
-    /* padding-left: 150px; */
     color: rgb(112, 108, 117);
 }
 
 #conteudo h3{
     font-family: avenirnext;
-    color: rgb(33, 26, 41);
+    color: rgb(59, 43, 77);
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -147,11 +147,17 @@ main {
 #conteudo div input {
     width: 100%;
     padding: 8px;
+    padding-left: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     border: none;
     border-radius: 15px;
     color: rgb(67, 60, 75);
+    font-size: 12px;
+}
+
+#conteudo div ::-webkit-input-placeholder {
+    color: rgb(188, 183, 194);
 }
 
 #nome, #descricao, #preco, #foto label {
@@ -164,9 +170,11 @@ main {
     width: 100%;
     height: 100px;
     padding: 8px;
+    padding-left: 10px;
     border: none;
     border-radius: 15px;
     margin-top: 10px;
+    font-size: 12px;
 }
 
 .imagem img {
@@ -206,7 +214,7 @@ footer {
     width: 100%;
     height: 100px;
     background-color: #71b0d4;
-    margin-top: 19%;
+    /* margin-top: 50%; */
 }
 
 .menu-footer {

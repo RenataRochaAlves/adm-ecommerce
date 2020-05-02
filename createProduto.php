@@ -1,18 +1,55 @@
 <?php 
 
+include('includes/functions.php');
+
 $menu = ["Criar Produto", "Lista de Produtos", "Produto", "Editar Produto"];
 
-$nome = $_POST['nomeProduto'];
-$descricao = $_POST['descricaoProduto'];
-$preco = $_POST['precoProduto'];
-$foto = $_POST['fotoProduto'];
+$nome = "";
+$descricao = "";
+$preco = "";
+$imagem = "";
 
-if($_POST == false){
-    $nome = " ";
-    $descricao = " ";
-    $preco = " ";
-    $foto = " ";
+// criando a persistência de dados
+if($_POST){
+    $nome = $_POST['nomeProduto'];
+    $descricao = $_POST['descricaoProduto'];
+    $preco = $_POST['precoProduto'];
 }
+
+// verifica se foi enviado algum arquivo
+if($_FILES) {
+    // Separando informações uteis do $_FILES
+    $tmpName = $_FILES['foto']['tmp_name'];
+    $fileName = uniqid() . '-' . $_FILES['foto']['name'];
+    $error = $_FILES['foto']['error'];
+
+    // Salvar o arquivo numa pasta do meu sistema
+    move_uploaded_file($tmpName,'../img/usuarios/'.$fileName);
+
+    // Salvar o nome do arquivo em $imagem
+    $imagem ='../img/produtos/'.$fileName;
+
+} else {
+   $imagem = null; 
+}
+
+// criando a verificação de dados
+
+// $nomeOk = true;
+// $descricaoOk = true;
+// $precoOk = true;
+// $foto = true;
+
+// if($_POST) {
+//     if($nome < 5){
+//         $nomeOk = false;
+//     }
+//     if(is_numeric($preco) == false){
+//         $precoOk = false;
+//     }
+// }
+
+addProduto($nome, $descricao, $preco, $imagem);
 
 ?>
 
@@ -21,7 +58,7 @@ if($_POST == false){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/createProduto.css">
     <title>Adicionar Novo Produto | PetShop</title>
 </head>
 <body>
@@ -50,21 +87,23 @@ if($_POST == false){
 
             <h3>Adicionar Novo Produto</h3>
 
-            <form action="createProduto.php" method="POST">
+            <form action="createProduto.php" method="POST" enctype="multipart/form-data">
 
                 <div id="nome">
                 <label for="nomeProduto">Nome do Produto</label><br>
-                    <input type="text" name="nomeProduto" id="nomeProduto" value="<?= $nome ?>" placeholder="Camiseta Arco-Íris" required><br>
+                    <input type="text" name="nomeProduto" id="nomeProduto" value="<?= $nome ?>" placeholder="Arranhador para gatos" required><br>
+                    <?php ($nomeOk? '' : '<span class="erro">O nome é muito curto')?>
                 </div>
 
                 <div id="descricao">
                 <label for="descricaoProduto">Descrição do Produto</label><br>
-                    <textarea name="descricaoProduto" id="descricaoProduto" cols="30" rows="10" value="<?= $descricao ?>" placeholder="Camiseta com estampa localizada por silk screen de um arco-íris."><?= $descricao ?></textarea><br>
+                    <textarea name="descricaoProduto" id="descricaoProduto" cols="30" rows="10" value="<?= $descricao ?>" placeholder="Brinquedo arranhador para gatos filhotes"><?= $descricao ?></textarea><br>
                 </div>
 
                 <div id="preco">
                 <label for="precoProduto">Preço do Produto</label><br>
                     <input type="number" step=0.01 name="precoProduto" id="precoProduto" value="<?= $preco ?>" placeholder="35,99" required><br>
+                    <?php ($precoOk? '' : '<span class="erro">O preço não é numérico')?>
                 </div>
 
                 <div>
