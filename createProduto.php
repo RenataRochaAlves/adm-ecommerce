@@ -42,7 +42,12 @@ if($_POST){
         }
     }
     addProduto($nome, $descricao, $preco, $imagem);
+
+    header('location: mensagemSucesso.php');
+
 }
+
+
 // criando a verificação de dados
 
 // $nomeOk = true;
@@ -119,8 +124,13 @@ if($_POST){
                     <label for="foto">Selecione a imagem do produto</label><br>
                     <label class="imagem">
                         <!-- estando dentro da mesma label tudo se torna clicável e funcional -->
-                        <img src="img/imagem.png" id="foto-carregada"><br>
                         <input type="file" name="fotoProduto" id="foto" accept=".jpg,.jpeg,.png,.gif"><br>
+
+                        <?php if($_FILES){ ?>
+                            <img src="<?= $_FILES['fotoProduto']['tmp_name'] ?>" alt="foto produto">
+                        <?php } else { ?>
+                            <img src="img/imagem.png" id="foto-carregada"><br>
+                        <?php } ?>
                     </label>
                 </div>
 

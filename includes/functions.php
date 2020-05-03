@@ -1,7 +1,5 @@
 <?php 
 
-error_reporting(E_ALL);
-
 // função para pegar o array associativo do json
 function carregaProdutos() {
 
@@ -42,6 +40,22 @@ function addProduto($nome, $descricao, $valor, $imagem){
     //     // transferre os dados para o arquivo json
         file_put_contents('includes/produtos.json', $json);
 }
+
+// função que deleta os produtos do json
+function resetaProdutos(){
+    // carrega os dados do json
+    $json = file_get_contents('produtos.json');
+
+    $produtos = json_decode($json, true);
+
+    $produtos = $produtos[0];
+
+    $json = json_encode($produtos);
+
+    file_put_contents('produtos.json', $json);
+}
+
+// resetaProdutos();
 
 
 ?>

@@ -1,6 +1,7 @@
 <?php 
 
-include('includes/functions.php');
+require('includes/functions.php');
+
 
 $menu = [["nome" => "Criar Produto", 
         "link" => "createProduto.php"],
@@ -11,7 +12,7 @@ $menu = [["nome" => "Criar Produto",
         ["nome" => "Editar Produto",
         "link" => "#"]];
 
-$produtos = carregaProdutos();
+
 
 
 ?>
@@ -21,11 +22,11 @@ $produtos = carregaProdutos();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/indexProdutos.css">
-    <title>Produtos | PetShop</title>
+    <link rel="stylesheet" href="css/mensagemSucesso.css">
+    <title>Sucesso! | PetShop</title>
 </head>
 <body>
-<header>
+    <header>
         <div>
             <img src="img/031-paw.png" alt="E-commerce Logo">
             <h2>PetShop</h2>
@@ -47,34 +48,19 @@ $produtos = carregaProdutos();
 
     <main>
         <div id="conteudo">
-
-            <h3>Produtos</h3>
-
-            <ul class="cabecalho">
-                <li>ID</li>
-                <li>Nome</li>
-                <li>Descrição</li>
-                <li>Preço</li>
-                <li><a href="">Link</a></li>
-            </ul>
-
-            <?php foreach($produtos as $value): ?>
-                    <div class="produto">
-                        <ul>
-                        <li><?= $value["id"] ?></li>
-                        <li><?= $value["nome"] ?></li>
-                        <li><?= $value["descricao"] ?></li>
-                        <li><?= $value["valor"] ?></li>
-                        <li><a href="<?= $value["link"] ?>">Ver produto</a></li>
-                        </ul>
-                    </div>
-            <?php endforeach; ?>
-
+            
+            <div class="mensagem">
+            <img src="img/035-fish.png" alt="peixe">
+            <h3>Produto cadastrado com sucesso!</h3>
+            </div>
+            <a href="createProduto.php"><button>Cadastrar mais produtos</button></a>
+            
+        </div>
     </main>
 
     <footer>
         <nav class="menu-footer">
-             <ul>
+            <ul>
                 <?php foreach($menu as $value): ?>
                 <li><a href="<?= $value['link'] ?>"><?= $value['nome'] ?></a></li>
                 <?php endforeach ?>
