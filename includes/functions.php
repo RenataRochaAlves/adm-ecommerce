@@ -57,5 +57,16 @@ function resetaProdutos(){
 
 // resetaProdutos();
 
+// procura o produto por id
+function produtoId($id){
+    $produtos = carregaProdutos();
+
+    foreach($produtos as $produto){
+        if($produto['id'] == $id){
+            return $produto;
+        }
+    } 
+    return false;
+}
 
 ?>

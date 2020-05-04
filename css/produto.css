@@ -24,8 +24,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
 }
 
 /* aqui começa o header */
@@ -100,10 +98,11 @@ header nav ul li a:hover {
     background-color: #fc573b;
 }
 
-/* aqui começa o formulário de cadastro de produtos */
+/* aqui começam as informações do produto */
 
 main {
     display: flex;
+    height: auto;
     align-items: center;
     flex-direction: column;
 }
@@ -116,69 +115,72 @@ main {
     background-color: rgb(246, 243, 252);
     flex-flow: column nowrap;
     padding: 10px;
-    padding-bottom: 120px;
+    padding-bottom: 80px;
     margin-top: 120px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
+    /* margin-bottom: 120px; */
     color: rgb(112, 108, 117);
 }
 
 #conteudo h3{
     font-family: avenirnext;
-    color: rgb(59, 43, 77);
+    color: rgb(165, 139, 196);
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-
-/* aqui começa a lista de produtos */
-.cabecalho {
-    display: flex;
-    width: 80%;
-    align-items: center;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    border-bottom: 1px solid rgb(196, 179, 216);
-}
-
-.cabecalho li {
-    display: inline-block;
-    list-style: none;
-    font-family: avenirnext;
-    font-size: 16px;
-    color: rgb(148, 119, 179);
-}
-
 .produto {
     display: flex;
-    flex-direction: column;
     width: 80%;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    border-bottom: 1px solid rgb(196, 179, 216);
-}
-
-
-.produto ul {
-    display: flex;
-    width: 100%;
-    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
 }
 
-.produto ul li {
+.produto div {
+    width: calc(100% / 2 - 15px);
+    display: flex;
+}
+
+.imagem img {
+    width: 100%;
+    height: auto;
+}
+
+.info {
+    flex-direction: column;
+}
+
+.info h5 {
     font-size: 14px;
-    list-style: none;
-    display: inline-block;
-    width: 6%;
+    color: rgb(90, 84, 97);
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.produto ul li a {
-    text-decoration: none;
-    color: rgb(148, 119, 179);
+.info h4 {
+    font-size: 16px;
 }
 
+#conteudo button {
+    font-size: 14px;
+    font-family: avenirnext;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background-color: #ff7958;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 100px;
+}
+
+#conteudo button:hover {
+    background-color: #fc573b;
+}
 
 /* aqui começa o footer */
 

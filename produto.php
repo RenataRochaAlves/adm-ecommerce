@@ -1,6 +1,7 @@
 <?php 
 
-include('includes/functions.php');
+require('includes/functions.php');
+
 
 $menu = [["nome" => "Criar Produto", 
         "link" => "createProduto.php"],
@@ -11,7 +12,11 @@ $menu = [["nome" => "Criar Produto",
         ["nome" => "Editar Produto",
         "link" => "#"]];
 
-$produtos = carregaProdutos();
+if($_GET){
+    $id = $_GET['id'];
+
+    $produto = produtoId($id);
+}
 
 ?>
 
@@ -20,11 +25,11 @@ $produtos = carregaProdutos();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/indexProdutos.css">
-    <title>Produtos | PetShop</title>
+    <link rel="stylesheet" href="css/produto.css">
+    <title><?= $produto['nome'] ?> | PetShop</title>
 </head>
 <body>
-<header>
+    <header>
         <div>
             <img src="img/031-paw.png" alt="E-commerce Logo">
             <h2>PetShop</h2>
@@ -46,34 +51,26 @@ $produtos = carregaProdutos();
 
     <main>
         <div id="conteudo">
-
-            <h3>Produtos</h3>
-
-            <ul class="cabecalho">
-                <li>ID</li>
-                <li>Nome</li>
-                <li>Descrição</li>
-                <li>Preço</li>
-                <li>Link</li>
-            </ul>
-
-            <?php foreach($produtos as $value): ?>
-                    <div class="produto">
-                        <ul>
-                        <li><?= $value["id"] ?></li>
-                        <li><?= $value["nome"] ?></li>
-                        <li><?= $value["descricao"] ?></li>
-                        <li><?= $value["valor"] ?></li>
-                        <li><a href="produto.php?id=<?= $value["id"] ?>">Ver produto</a></li>
-                        </ul>
-                    </div>
-            <?php endforeach; ?>
-
+            
+            <div class ="produto">
+                <div class="imagem">
+                    <img src="<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
+                </div>
+                <div class="info">
+                    <h3><?= $produto['nome'] ?></h3>
+                    <h5>Descrição</h5>
+                    <p><?= $produto['descricao'] ?></p>
+                    <h5>Valor</h5>
+                    <h4>R$ <?= $produto['valor'] ?></h4>
+                </div>
+                
+                <a href="indexProdutos.php"><button>Voltar para lista de produtos</button></a>
+            </div>
     </main>
 
     <footer>
         <nav class="menu-footer">
-             <ul>
+            <ul>
                 <?php foreach($menu as $value): ?>
                 <li><a href="<?= $value['link'] ?>"><?= $value['nome'] ?></a></li>
                 <?php endforeach ?>
