@@ -1,5 +1,35 @@
 <?php 
 
+// função que carrega os usuarios existentes
+function carregaUsuarios(){
+
+    $json = file_get_contents("includes/usuarios.json");
+
+    $usuarios = json_decode($json, true);
+
+    return $usuarios;
+
+}
+
+// função que adiciona um novo usuario
+function addUsuario($nome, $email, $senha) {
+
+    $usuarios = carregaUsuarios();
+
+    $novoUsuario = ["id" => count($usuarios) + 1,
+                    "nome" => $nome,
+                    "email" => $email,
+                    "senha" => password_hash($senha, PASSWORD_DEFAULT)];
+
+    $usuarios[] = $novoUsuario;
+
+    $json = json_encode($usuarios);
+
+    file_put_contents('includes/usuarios.json', $json);
+}
+
+
+
 // função para pegar o array associativo do json
 function carregaProdutos() {
 

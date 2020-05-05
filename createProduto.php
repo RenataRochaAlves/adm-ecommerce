@@ -124,7 +124,7 @@ if($_POST){
                     <label for="foto">Selecione a imagem do produto</label><br>
                     <label class="imagem">
                         <!-- estando dentro da mesma label tudo se torna clicável e funcional -->
-                        <input type="file" name="fotoProduto" id="foto" accept=".jpg,.jpeg,.png,.gif"><br>
+                        <input type="file" name="fotoProduto" id="foto" accept=".jpg,.jpeg,.png,.gif" require><br>
 
                         <?php if($_FILES){ ?>
                             <img src="<?= $_FILES['fotoProduto']['tmp_name'] ?>" alt="foto produto">

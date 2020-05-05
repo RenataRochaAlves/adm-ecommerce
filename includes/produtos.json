@@ -1,1 +1,30 @@
-[{"id":1,"nome":"Ra\u00e7\u00e3o Golden C\u00e3es Adultos 20kg","descricao":"Ra\u00e7\u00e3o Golden Special sabor Frango e Carne para C\u00e3es Adultos 20kg com f\u00f3rmula rica em minerais e nutrientes","valor":"135.90","imagem":"img\/produtos\/5eaf109714878-Rac\u0327a\u0303o_Premier_Golden_Special_Ca\u0303es_Adultos_Frango_e_Carne_-_20_Kg_1213491.jpg"},{"id":2,"nome":"Bifinho Petisc\u00e3o para C\u00e3es 250g","descricao":"Snack para c\u00e3es bifinho sabor carne em formato de palito para c\u00e3es 250g","valor":"9.99","imagem":"img\/produtos\/5eaf188429f4e-Bifinho_Carne_Fino.jpg"},{"id":3,"nome":"Cama Pawise para Animais Vermelha","descricao":"Cama Pawise para animais de m\u00e9dio porte vermelha acochada ","valor":"169.90","imagem":"img\/produtos\/5eaf1ad5b9068-71GxjoLSNgL._AC_UL320_ML3_.jpg"},{"id":4,"nome":"Cabana Estampada Urban Puppy","descricao":"Cabana estampada Urban Puppy preta e branca para animais de pequeno porte","valor":"329.99","imagem":"img\/produtos\/5eaf21efe1a60-43116600_1GG.jpg"}]
+[
+    {
+        "id": 1,
+        "nome": "Ra\u00e7\u00e3o Golden C\u00e3es Adultos 20kg",
+        "descricao": "Ra\u00e7\u00e3o Golden Special sabor Frango e Carne para C\u00e3es Adultos 20kg com f\u00f3rmula rica em minerais e nutrientes",
+        "valor": "135.90",
+        "imagem": "img\/produtos\/5eaf109714878-Rac\u0327a\u0303o_Premier_Golden_Special_Ca\u0303es_Adultos_Frango_e_Carne_-_20_Kg_1213491.jpg"
+    },
+    {
+        "id": 2,
+        "nome": "Bifinho Petisc\u00e3o para C\u00e3es 250g",
+        "descricao": "Snack para c\u00e3es bifinho sabor carne em formato de palito para c\u00e3es 250g",
+        "valor": "9.99",
+        "imagem": "img\/produtos\/5eaf188429f4e-Bifinho_Carne_Fino.jpg"
+    },
+    {
+        "id": 3,
+        "nome": "Cama Pawise para Animais Vermelha",
+        "descricao": "Cama Pawise para animais de m\u00e9dio porte vermelha acochada ",
+        "valor": "169.90",
+        "imagem": "img\/produtos\/5eaf1ad5b9068-71GxjoLSNgL._AC_UL320_ML3_.jpg"
+    },
+    {
+        "id": 4,
+        "nome": "Cabana Estampada Urban Puppy",
+        "descricao": "Cabana estampada Urban Puppy preta e branca para animais de pequeno porte",
+        "valor": "329.99",
+        "imagem": "img\/produtos\/5eaf21efe1a60-43116600_1GG.jpg"
+    }
+]

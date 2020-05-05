@@ -11,21 +11,17 @@ $menu = [["nome" => "Criar Produto",
         ["nome" => "Editar Produto",
         "link" => "#"]];
 
-$usuarios = [["nome" => "Ana Júlia Alves",
-            "email" => "anajulia@petshop.com"],
-            ["nome" => "Márcia Junqueira",
-            "email" => "marcia@petshop.com"],
-            ["nome" => "Pedro Gonçalves",
-            "email" => "pedro@petshop.com"],
-            ["nome" => "Felipe Teixeira",
-            "email" => "felipe@petshop.com"],
-            ["nome" => "Angélica Pereira",
-            "email" => "angelica@petshop.com"]];
+$usuarios = carregaUsuarios();
 
 $nome = "";
 $email = "";
 $senha = "";
 $confirmacao = "";
+
+$nomeOk = true;
+$emailOk = true;
+$senhaOk = true;
+$confirmacaoOk = true;
 
 // criando a persistência de dados
 if($_POST){
@@ -33,6 +29,28 @@ if($_POST){
     $email = $_POST['emailUsuario'];
     $senha = $_POST['senhaUsuario'];
     $confirmacao = $_POST['confirmacaoUsuario'];
+
+    // criando a verificação de dados
+    if(strlen($nome) < 5){
+        $nomeOk = false;
+    }
+    if(strpos($email, '@') == false){
+        $emailOk = false;
+    }
+    if(strlen($senha) < 6){
+        $senhaOk = false;
+    }
+    if($senha != $confirmacao){
+        $confirmacaoOk = false;
+    }
+
+    // se estiver tudo certo, vai adicionar ao banco de dados
+    if($nomeOk && $emailOk && $senhaOk && $confirmacaoOk) {
+        addUsuario($nome, $email, $senha);
+
+        header('location: sucessoUsuario.php');
+    }
+
 }
 
 
@@ -79,18 +97,21 @@ if($_POST){
                 <div id="nome">
                 <label for="nomeUsuario">Nome Completo</label><br>
                     <input type="text" name="nomeUsuario" id="nomeUsuario" value="<?= $nome ?>" placeholder="Maria da Silva" required><br>
-                    <?php ($nomeOk? '' : '<span class="erro">O nome é muito curto')?>
+                    <?= ($nomeOk? '': '<span class="erro">O nome é muito curto') ?>
                 </div>
 
                 <div id="email">
                 <label for="emailUsuario">E-mail</label><br>
                 <input type="email" name="emailUsuario" id="emailUsuario" value="<?= $email ?>" placeholder="maria@email.com" required><br>
+                <?= ($emailOk? '': '<span class="erro">O e-mail é inválido') ?>
                 </div>
 
                 <div id ="senhas">
                 <div id="senha">
                 <label for="senhaUsuario">Senha</label><br>
                     <input type="password" name="senhaUsuario" id="senhaUsuario" value="<?= $senha ?>" required><br>
+                    <?= ($senhaOk? '': '<span class="erro">A senha é muito curta') ?><br>
+                    <?= ($confirmacaoOk? '': '<span class="erro">A senha e a confirmação são diferentes') ?>
                 </div>
 
                 <div id="confirmacao">
