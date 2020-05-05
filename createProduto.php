@@ -120,17 +120,13 @@ if($_POST){
                     <?php ($precoOk? '' : '<span class="erro">O preço não é numérico')?>
                 </div>
 
-                <div>
+                <div class="fotoProduto">
                     <label for="foto">Selecione a imagem do produto</label><br>
                     <label class="imagem">
                         <!-- estando dentro da mesma label tudo se torna clicável e funcional -->
                         <input type="file" name="fotoProduto" id="foto" accept=".jpg,.jpeg,.png,.gif" require><br>
 
-                        <?php if($_FILES){ ?>
-                            <img src="<?= $_FILES['fotoProduto']['tmp_name'] ?>" alt="foto produto">
-                        <?php } else { ?>
-                            <img src="img/imagem.png" id="foto-carregada"><br>
-                        <?php } ?>
+                        <img src="img/imagem.png" id="foto-carregada"><br>
                     </label>
                 </div>
 
@@ -150,5 +146,15 @@ if($_POST){
             </ul>
             </nav>
     </footer>
+
+    <script>
+        document.getElementById("foto").onchange = (evt) => {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById("foto-carregada").src = e.target.result;
+            };
+            reader.readAsDataURL(evt.target.files[0]);
+        };
+    </script>
 </body>
 </html>

@@ -135,12 +135,17 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 60%;
 }
 
 #conteudo div {
-    width: 60%;
-    /* margin-left: 25%; */
+    width: 100%;
     margin-top: 5px;
+}
+
+.fotoProduto img, input {
+    width: 50%;
+    margin-bottom: 20px;
 }
 
 #conteudo div input {
@@ -176,11 +181,6 @@ main {
     font-size: 12px;
 }
 
-.imagem img {
-    margin-top: 15px;
-    margin-bottom: 15px;
-    width: 40%;
-}
 
 .imagem input[type=file]{
     display: none;
