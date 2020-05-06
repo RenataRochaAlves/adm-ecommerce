@@ -49,25 +49,30 @@ $produtos = carregaProdutos();
 
             <h3>Produtos</h3>
 
-            <ul class="cabecalho">
-                <li>ID</li>
-                <li>Nome</li>
-                <li>Descrição</li>
-                <li>Preço</li>
-                <li>Link</li>
-            </ul>
-
-            <?php foreach($produtos as $value): ?>
-                    <div class="produto">
-                        <ul>
-                        <li><?= $value["id"] ?></li>
-                        <li><?= $value["nome"] ?></li>
-                        <li><?= $value["descricao"] ?></li>
-                        <li><?= $value["valor"] ?></li>
-                        <li><a href="produto.php?id=<?= $value["id"] ?>">Ver produto</a></li>
-                        </ul>
+            <table>
+                <div>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Link</th>
+                </tr>
+                </div>
+                <?php foreach($produtos as $value): ?>
+                    <div>
+                    <tr class="produto">
+                        <td><?= $value["id"] ?></td>
+                        <td><?= $value["nome"] ?></td>
+                        <td><?= $value["descricao"] ?></td>
+                        <td>R$<?= $value["valor"] ?></td>
+                        <td><a href="produto.php?id=<?= $value["id"] ?>">Ver produto</a></td>
+                    </tr>
                     </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            </table>
+
+            
 
     </main>
 

@@ -63,9 +63,11 @@ if($_GET){
                     <h5>Valor</h5>
                     <h4>R$ <?= $produto['valor'] ?></h4>
                 </div>
-                
-                <a href="indexProdutos.php"><button>Voltar para lista de produtos</button></a>
-            </div>
+                    <a href="editProduto.php?id=<?= $id ?>"><button class="edit">Editar produto</button></a>
+                    <a href=""><button class="remove">Excluir produto</button></a>
+                </div>
+                    <a href="indexProdutos.php"><button>Voltar para lista de produtos</button></a>
+
     </main>
 
     <footer>

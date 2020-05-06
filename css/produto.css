@@ -165,22 +165,33 @@ main {
     font-size: 16px;
 }
 
-#conteudo button {
+
+ button {
     font-size: 14px;
     font-family: avenirnext;
     border-radius: 12px;
     border: none;
     color: white;
-    background-color: #ff7958;
+    background-color: #71b0d4;
     padding: 10px;
     padding-left: 50px;
     padding-right: 50px;
     margin-top: 100px;
 }
 
-#conteudo button:hover {
-    background-color: #fc573b;
+
+.remove {
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: #f76349;
 }
+
+.edit {
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: rgb(165, 139, 196);
+}
+
 
 /* aqui começa o footer */
 

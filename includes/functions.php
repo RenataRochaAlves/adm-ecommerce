@@ -99,4 +99,21 @@ function produtoId($id){
     return false;
 }
 
+// função para editar um produto por id
+function editaProduto($id, $nome, $descricao, $preco, $imagem) {
+    $produtos = carregaProdutos();
+
+    $editaProduto = ["id" => $id,
+                    "nome" => $nome,
+                    "descricao" => $descricao,
+                    "valor" => $preco,
+                    "imagem" => $imagem];
+
+    $produtos[$id - 1] = $editaProduto;
+
+    $json = json_encode($produtos);
+
+    file_put_contents('includes/produtos.json', $json);
+}
+
 ?>
