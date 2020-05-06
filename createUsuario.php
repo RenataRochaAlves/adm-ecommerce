@@ -54,8 +54,6 @@ if($_POST){
 }
 
 
-// addProduto($nome, $descricao, $preco, $imagem);
-
 ?>
 
 <!DOCTYPE html>
@@ -128,16 +126,18 @@ if($_POST){
 
             <h3>Usuários</h3>
     
-
+            <table>
             <?php foreach($usuarios as $value): ?>
                     <div class="usuario">
-                        <ul>
-                        <li><?= $value["nome"] ?></li>
-                        <li><?= $value["email"] ?></li>
-                        <li><a href=""><img src="img/remove.png" alt="remover"></a></li>
-                        </ul>
+                        <tr>
+                        <td><?= $value["nome"] ?></td>
+                        <td><?= $value["email"] ?></td>
+                        <td><a href=""><img src="img/edit-tools.png" alt="editar"></a></td>
+                        <td><a href="sucessoExcluirUsuario.php?id=<?= $value['id'] ?>"><img src="img/remove.png" alt="remover"></a></td>
+                        </tr>
                     </div>
             <?php endforeach; ?>
+            </table>
 
     </main>
 

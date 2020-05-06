@@ -127,4 +127,15 @@ function deletaProduto($id){
     file_put_contents('includes/produtos.json', $json);
 }
 
+// função para excluir um usuario por id
+function deletaUsuario($id){
+    $usuarios = carregaUsuarios();
+
+    unset($usuarios[$id - 1]);
+
+    $json = json_encode($usuarios);
+
+    file_put_contents('includes/usuarios.json', $json);
+}
+
 ?>
