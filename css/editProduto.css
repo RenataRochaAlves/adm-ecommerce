@@ -199,14 +199,12 @@ main {
     margin-bottom: 10px;
 }
 
+
 #conteudo button:hover {
     background-color: #71b0d4;
 }
 
-#voltar {
-    margin-top: 20px;
-    background-color: rgb(175, 131, 224);
-}
+
 
 /* aqui começa o footer */
 

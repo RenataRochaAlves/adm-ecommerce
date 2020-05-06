@@ -12,11 +12,8 @@ $menu = [["nome" => "Criar Produto",
         ["nome" => "Editar Produto",
         "link" => "#"]];
 
-if($_GET){
-    $id = $_GET['id'];
 
-    $produto = produtoId($id);
-}
+
 
 ?>
 
@@ -25,8 +22,8 @@ if($_GET){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/produto.css">
-    <title><?= $produto['nome'] ?> | PetShop</title>
+    <link rel="stylesheet" href="css/mensagemSucesso.css">
+    <title>Sucesso! | PetShop</title>
 </head>
 <body>
     <header>
@@ -52,22 +49,13 @@ if($_GET){
     <main>
         <div id="conteudo">
             
-            <div class ="produto">
-                <div class="imagem">
-                    <img src="<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
-                </div>
-                <div class="info">
-                    <h3><?= $produto['nome'] ?></h3>
-                    <h5>Descrição</h5>
-                    <p><?= $produto['descricao'] ?></p>
-                    <h5>Valor</h5>
-                    <h4>R$ <?= $produto['valor'] ?></h4>
-                </div>
-                    <a href="editProduto.php?id=<?= $id ?>"><button class="edit">Editar produto</button></a>
-                    <a href="sucessoExcluir.php?id=<?= $id ?>"><button class="remove">Excluir produto</button></a>
-                </div>
-                    <a href="indexProdutos.php"><button>Voltar para lista de produtos</button></a>
-
+            <div class="mensagem">
+            <img src="img/020-mouse.png" alt="peixe">
+            <h3>Produto editado com sucesso!</h3>
+            </div>
+            <a href="indexProdutos.php"><button>Voltar para lista de produtos</button></a>
+            
+        </div>
     </main>
 
     <footer>

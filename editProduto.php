@@ -49,7 +49,7 @@ if($_POST){
     }
     editaProduto($_GET['id'], $nome, $descricao, $preco, $imagem);
 
-    header('location: mensagemSucesso.php');
+    header('location: sucessoEdicaoProduto.php');
 
 }
 

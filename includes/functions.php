@@ -116,4 +116,15 @@ function editaProduto($id, $nome, $descricao, $preco, $imagem) {
     file_put_contents('includes/produtos.json', $json);
 }
 
+// função para excluir um produto por id
+function deletaProduto($id){
+    $produtos = carregaProdutos();
+
+    unset($produtos[$id - 1]);
+
+    $json = json_encode($produtos);
+
+    file_put_contents('includes/produtos.json', $json);
+}
+
 ?>

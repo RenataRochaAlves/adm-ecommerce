@@ -43,27 +43,9 @@ if($_POST){
     }
     addProduto($nome, $descricao, $preco, $imagem);
 
-    header('location: mensagemSucesso.php');
+    header('location: sucessoCadastro.php');
 
 }
-
-
-// criando a verificação de dados
-
-// $nomeOk = true;
-// $descricaoOk = true;
-// $precoOk = true;
-// $foto = true;
-
-// if($_POST) {
-//     if($nome < 5){
-//         $nomeOk = false;
-//     }
-//     if(is_numeric($preco) == false){
-//         $precoOk = false;
-//     }
-// }
-
 
 ?>
 
