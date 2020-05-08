@@ -17,11 +17,22 @@ $descricao = "";
 $preco = "";
 $imagem = "";
 
+$nomeOk = true;
+$precoOk = true;
+$imagemOk = true;
+
 // criando a persistência de dados
 if($_POST){
     $nome = $_POST['nomeProduto'];
     $descricao = $_POST['descricaoProduto'];
     $preco = $_POST['precoProduto'];
+
+    if(strlen($nome) < 6){
+        $nomeOk = false;
+    }
+    if(is_numeric($preco) == false){
+        $precoOk = false;
+    }
 
 // verifica se foi enviado algum arquivo
     if($_FILES) {
@@ -38,12 +49,17 @@ if($_POST){
         $imagem ='img/produtos/'.$fileName;
 
         } else {
-            $imagem = null; 
+            $imagemOk = false; 
         }
+    } else{
+        $imagemOk = false;
     }
+    if($nomeOk && $precoOk && $imagemOk){
+
     addProduto($nome, $descricao, $preco, $imagem);
 
     header('location: sucessoCadastro.php');
+    }
 
 }
 
@@ -87,9 +103,9 @@ if($_POST){
 
                 <div id="nome">
                 <label for="nomeProduto">Nome do Produto</label><br>
-                    <input type="text" name="nomeProduto" id="nomeProduto" value="<?= $nome ?>" placeholder="Arranhador para gatos" required><br>
-                    <?php ($nomeOk? '' : '<span class="erro">O nome é muito curto')?>
+                    <input type="text" name="nomeProduto" id="nomeProduto" value="<?= $nome ?>" placeholder="Arranhador para gatos" required>
                 </div>
+                    <!-- <?php ($nomeOk? '' : '<span>O nome é muito curto')?><br> -->
 
                 <div id="descricao">
                 <label for="descricaoProduto">Descrição do Produto</label><br>
@@ -99,18 +115,19 @@ if($_POST){
                 <div id="preco">
                 <label for="precoProduto">Preço do Produto</label><br>
                     <input type="number" step=0.01 name="precoProduto" id="precoProduto" value="<?= $preco ?>" placeholder="35,99" required><br>
-                    <?php ($precoOk? '' : '<span class="erro">O preço não é numérico')?>
+                    <!-- <?php ($precoOk? '' : '<span class="erro">O preço não é numérico')?><br> -->
                 </div>
 
                 <div class="fotoProduto">
                     <label for="foto">Selecione a imagem do produto</label><br>
                     <label class="imagem">
                         <!-- estando dentro da mesma label tudo se torna clicável e funcional -->
-                        <input type="file" name="fotoProduto" id="foto" accept=".jpg,.jpeg,.png,.gif" require><br>
+                        <input type="file" name="fotoProduto" id="foto" accept=".jpg,.jpeg,.png,.gif" required><br>
 
                         <img src="img/imagem.png" id="foto-carregada"><br>
                     </label>
                 </div>
+                <?php ($imagemOk? '' : '<span class="erro">A imagem é inválida')?><br>
 
                 <div>
                 <button type="submit">Enviar</button>

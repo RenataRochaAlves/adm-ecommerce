@@ -11,14 +11,40 @@ $menu = [["nome" => "Criar Produto",
         ["nome" => "Editar Produto",
         "link" => "#"]];
 
+$email = "";
+$senha = "";
+
+$emailOk = true;
+$senhaOk = true;
 
 // criando a persistência de dados
 if($_POST){
-    $nome = $_POST['nomeUsuario'];
     $email = $_POST['emailUsuario'];
     $senha = $_POST['senhaUsuario'];
-    $confirmacao = $_POST['confirmacaoUsuario'];
+
+    $usuarios = carregaUsuarios();
+
+    foreach($usuarios as $usuario){
+        if($usuario['email'] == $email){
+            if(password_verify($senha, $usuario['senha'])){
+                // inicia a session
+                session_start();
+
+                // salvando os dados do usuario na session
+                $_SESSION['nome'] = $usuario['nome'];
+                $_SESSION['email'] = $usuario['email'];
+
+                header('location: createUsuario.php');
+
+            } else {
+                $senhaOk = false;
+            }
+        } else {
+            $emailOk = false;
+        }
+    }
 }
+
 
 
 // addProduto($nome, $descricao, $preco, $imagem);
@@ -64,11 +90,13 @@ if($_POST){
                 <div id="email">
                 <label for="emailUsuario">E-mail</label><br>
                 <input type="email" name="emailUsuario" id="emailUsuario" value="<?= $email ?>" placeholder="maria@email.com" required><br>
+                <?= ($emailOk? '': '<span class="erro">E-mail não cadastrado') ?>
                 </div>
 
                 <div id="senha">
                 <label for="senhaUsuario">Senha</label><br>
                     <input type="password" name="senhaUsuario" id="senhaUsuario" value="<?= $senha ?>" required><br>
+                    <?= ($senhaOk? '': '<span class="erro">A senha está incorreta') ?>
                 </div>
 
                 <button type="submit">Enviar</button>

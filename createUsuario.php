@@ -94,7 +94,7 @@ if($_POST){
 
                 <div id="nome">
                 <label for="nomeUsuario">Nome Completo</label><br>
-                    <input type="text" name="nomeUsuario" id="nomeUsuario" value="<?= $nome ?>" placeholder="Maria da Silva" required><br>
+                    <input type="text" name="nomeUsuario" id="nomeUsuario" value="<?= $nome ?>" placeholder="Maria da Silva" required>
                     <?= ($nomeOk? '': '<span class="erro">O nome é muito curto') ?>
                 </div>
 

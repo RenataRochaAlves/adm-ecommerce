@@ -74,8 +74,6 @@ function addProduto($nome, $descricao, $valor, $imagem){
     // codifica o array de produtos para json
     $json = json_encode($produtos);
 
-    // verifica se o array não está vazio
-    // if(strlen($produtos) > 0){
     //     // transferre os dados para o arquivo json
         file_put_contents('includes/produtos.json', $json);
 }
@@ -93,8 +91,6 @@ function resetaProdutos(){
 
     file_put_contents('produtos.json', $json);
 }
-
-// resetaProdutos();
 
 // procura o produto por id
 function produtoId($id){
@@ -124,9 +120,9 @@ function usuarioId($id){
 function editaProduto($id, $nome, $descricao, $preco, $imagem) {
     $produtos = carregaProdutos();
 
-    for($i=0; $i <= count($produtos); $i++){
-        if($produtos[$i]['id'] == $id){
-            $posicao = $i;
+    foreach($produtos as $key => $produto){
+        if($produto['id'] == $id){
+            $posicao = $key;
         }
     }
 
@@ -147,9 +143,9 @@ function editaProduto($id, $nome, $descricao, $preco, $imagem) {
 function deletaProduto($id){
     $produtos = carregaProdutos();
 
-    for($i=0; $i <= count($produtos); $i++){
-        if($produtos[$i]['id'] == $id){
-            $posicao = $i;
+    foreach($produtos as $key => $produto){
+        if($produto['id'] == $id){
+            $posicao = $key;
         }
     }
 
