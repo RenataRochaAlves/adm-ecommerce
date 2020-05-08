@@ -1,5 +1,11 @@
 <?php 
 
+session_start();
+
+if(!$_SESSION){
+    header('location: acessoNegado.php');
+}
+
 require('includes/functions.php');
 
 

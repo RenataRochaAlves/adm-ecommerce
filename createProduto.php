@@ -1,5 +1,12 @@
 <?php 
 
+session_start();
+
+if(!$_SESSION){
+    header('location: acessoNegado.php');
+}
+
+
 require('includes/functions.php');
 
 
@@ -7,8 +14,8 @@ $menu = [["nome" => "Criar Produto",
         "link" => "createProduto.php"],
         ["nome" => "Lista de Produtos",
         "link" => "indexProdutos.php"],
-        ["nome" => "Produto",
-        "link" => "#"],
+        ["nome" => "Logout",
+        "link" => "logoutUsuario.php"],
         ["nome" => "Editar Produto",
         "link" => "#"]];
 

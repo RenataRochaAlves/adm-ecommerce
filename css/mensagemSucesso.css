@@ -128,9 +128,10 @@ main {
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
+    margin-left: 30px;
 }
 
-.mensagem {
+#conteudo div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -156,11 +157,21 @@ main {
     padding: 10px;
     padding-left: 50px;
     padding-right: 50px;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+#home button {
+    background-color: #71b0d4;
+}
+
+/* #home button:hover{
+    background-color: #5d96b8;
 }
 
 #conteudo button:hover {
     background-color: #fc573b;
-}
+} */
 
 /* aqui começa o footer */
 

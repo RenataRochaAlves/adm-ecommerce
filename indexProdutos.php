@@ -1,5 +1,11 @@
 <?php 
 
+session_start();
+
+if(!$_SESSION){
+    header('location: acessoNegado.php');
+}
+
 include('includes/functions.php');
 
 $menu = [["nome" => "Criar Produto", 

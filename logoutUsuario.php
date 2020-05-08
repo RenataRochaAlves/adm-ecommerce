@@ -2,9 +2,8 @@
 
 session_start();
 
-if(!$_SESSION){
-    header('location: acessoNegado.php');
-}
+unset($_SESSION['nome']);
+unset($_SESSION['email']);
 
 require('includes/functions.php');
 
@@ -18,12 +17,6 @@ $menu = [["nome" => "Criar Produto",
         ["nome" => "Editar Produto",
         "link" => "#"]];
 
-if($_GET){
-    $id = $_GET['id'];
-
-    $produto = produtoId($id);
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -31,8 +24,8 @@ if($_GET){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/produto.css">
-    <title><?= $produto['nome'] ?> | PetShop</title>
+    <link rel="stylesheet" href="css/mensagemSucesso.css">
+    <title>Logout efetuado com sucesso | PetShop</title>
 </head>
 <body>
     <header>
@@ -58,22 +51,15 @@ if($_GET){
     <main>
         <div id="conteudo">
             
-            <div class ="produto">
-                <div class="imagem">
-                    <img src="<?= $produto['imagem'] ?>" alt="<?= $produto['nome'] ?>">
-                </div>
-                <div class="info">
-                    <h3><?= $produto['nome'] ?></h3>
-                    <h5>Descrição</h5>
-                    <p><?= $produto['descricao'] ?></p>
-                    <h5>Valor</h5>
-                    <h4>R$ <?= $produto['valor'] ?></h4>
-                </div>
-                    <a href="editProduto.php?id=<?= $id ?>"><button class="edit">Editar produto</button></a>
-                    <a href="sucessoExcluirProduto.php?id=<?= $id ?>"><button class="remove">Excluir produto</button></a>
-                </div>
-                    <a href="indexProdutos.php"><button>Voltar para lista de produtos</button></a>
-
+            <div class="mensagem">
+                <img src="img/029-cage.png" alt="gaiola">
+                <h3>Logout efetuado com sucesso!</h3>
+            </div>
+            <div>
+                <a href="loginUsuario.php"><button>Fazer login</button></a>
+                <a href="home.php" id="home"><button>Ir para a home</button></a>
+            </div>
+            </div>
     </main>
 
     <footer>
