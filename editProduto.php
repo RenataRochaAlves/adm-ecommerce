@@ -120,7 +120,7 @@ if($_POST){
 
                 <div>
                 <button type="submit">Enviar</button>
-                <a href="produto.php?id=<?= $produto['id'] ?>"><button id="voltar" type="button">Voltar para página do produto</button></a>
+                <a href="produto.php?id=<?= $produto['id'] ?>"><button type="button">Voltar para página do produto</button></a>
                 </div>
             </form>
 

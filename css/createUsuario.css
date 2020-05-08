@@ -152,7 +152,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 20px;
+    /* margin-bottom: 10px; */
 }
 
 #senhas div {
@@ -195,8 +195,15 @@ main {
 
 /* aqui começa a lista de usuários */
 
+
 #conteudo table {
     width: 60%;
+}
+
+
+.usuario ul li a img {
+    width: 20px;
+    height: 20px;
 }
 
 table td{
@@ -207,6 +214,19 @@ table td{
     border-bottom: 1px solid rgb(211, 190, 235);
 }
 
+.usuario ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.usuario ul li {
+    font-size: 16px;
+    white-space: nowrap;
+    list-style: none;
+    display: inline-block;
+}
 
 a img {
     width: 20px;

@@ -11,12 +11,14 @@ $menu = [["nome" => "Criar Produto",
         ["nome" => "Editar Produto",
         "link" => "#"]];
 
-$usuarios = carregaUsuarios();
+if($_GET['id']){
+    $usuario = usuarioId($_GET['id']);
 
-$nome = "";
-$email = "";
-$senha = "";
-$confirmacao = "";
+    $nome = $usuario['nome'];
+    $email = $usuario['email'];
+    $senha = "";
+    $confirmacao = "";
+}
 
 $nomeOk = true;
 $emailOk = true;
@@ -46,9 +48,15 @@ if($_POST){
 
     // se estiver tudo certo, vai adicionar ao banco de dados
     if($nomeOk && $emailOk && $senhaOk && $confirmacaoOk) {
-        addUsuario($nome, $email, $senha);
+        if($_POST['senhaUsuario']){
+            editaUsuario($_GET['id'], $nome, $email, $senha);
 
-        header('location: sucessoUsuario.php');
+            header('location: sucessoUsuario.php');
+        } else {
+            editaUsuario($_GET['id'], $nome, $email, $usuario['senha']);
+
+            header('location: sucessoUsuario.php');
+        }
     }
 
 }
@@ -90,7 +98,7 @@ if($_POST){
 
             <h3>Criar Usuário</h3>
 
-            <form action="createUsuario.php" method="POST">
+            <form method="POST">
 
                 <div id="nome">
                 <label for="nomeUsuario">Nome Completo</label><br>
@@ -107,14 +115,14 @@ if($_POST){
                 <div id ="senhas">
                 <div id="senha">
                 <label for="senhaUsuario">Senha</label><br>
-                    <input type="password" name="senhaUsuario" id="senhaUsuario" value="<?= $senha ?>" required><br>
+                    <input type="password" name="senhaUsuario" id="senhaUsuario" value="<?= $senha ?>"><br>
                     <?= ($senhaOk? '': '<span class="erro">A senha é muito curta') ?><br>
                     <?= ($confirmacaoOk? '': '<span class="erro">A senha e a confirmação são diferentes') ?>
                 </div>
 
                 <div id="confirmacao">
                 <label for="confirmacaoUsuario">Confirmação de Senha</label><br>
-                    <input type="password" name="confirmacaoUsuario" id="confirmacaoUsuario" value="<?= $confirmacao ?>" required><br>
+                    <input type="password" name="confirmacaoUsuario" id="confirmacaoUsuario" value="<?= $confirmacao ?>"><br>
                 </div>
                 </div>
 
@@ -122,22 +130,6 @@ if($_POST){
                 <button type="submit">Enviar</button>
                 </div>
             </form>
-
-
-            <h3>Usuários</h3>
-    
-            <table>
-            <?php foreach($usuarios as $value): ?>
-                    <div class="usuario">
-                        <tr>
-                        <td><?= $value["nome"] ?></td>
-                        <td><?= $value["email"] ?></td>
-                        <td><a href="editUsuario.php?id=<?= $value['id'] ?>"><img src="img/edit-tools.png" alt="editar"></a></td>
-                        <td><a href="sucessoExcluirUsuario.php?id=<?= $value['id'] ?>"><img src="img/remove.png" alt="remover"></a></td>
-                        </tr>
-                    </div>
-            <?php endforeach; ?>
-            </table>
 
     </main>
 

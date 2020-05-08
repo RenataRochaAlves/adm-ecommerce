@@ -204,6 +204,10 @@ main {
     background-color: #71b0d4;
 }
 
+#conteudo button:last-child {
+    background-color: rgb(165, 139, 196);
+    margin-top: 20px;
+}
 
 
 /* aqui começa o footer */
