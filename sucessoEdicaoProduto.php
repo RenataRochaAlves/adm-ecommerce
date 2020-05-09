@@ -2,18 +2,12 @@
 
 require('includes/functions.php');
 
-
 $menu = [["nome" => "Criar Produto", 
         "link" => "createProduto.php"],
         ["nome" => "Lista de Produtos",
         "link" => "indexProdutos.php"],
-        ["nome" => "Produto",
-        "link" => "#"],
-        ["nome" => "Editar Produto",
-        "link" => "#"]];
-
-
-
+        ["nome" => "Criar Usuários",
+        "link" => "createUsuario.php"]];
 
 ?>
 
@@ -40,8 +34,7 @@ $menu = [["nome" => "Criar Produto",
         </nav>
         <nav class="login">
             <ul>
-                <li><a href="createUsuario.php">Cadastre-se</a></li>
-                <li><a href="loginUsuario.php">Login</a></li>
+                <li><a href="logoutUsuario.php">Logout</a></li>
             </ul>
         </nav>
     </header>
@@ -59,13 +52,7 @@ $menu = [["nome" => "Criar Produto",
     </main>
 
     <footer>
-        <nav class="menu-footer">
-            <ul>
-                <?php foreach($menu as $value): ?>
-                <li><a href="<?= $value['link'] ?>"><?= $value['nome'] ?></a></li>
-                <?php endforeach ?>
-            </ul>
-            </nav>
+        <p>Copyright © Renata Rocha</p>
     </footer>
 </body>
 </html>

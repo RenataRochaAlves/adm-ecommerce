@@ -2,14 +2,6 @@
 
 include('includes/functions.php');
 
-$menu = [["nome" => "Criar Produto", 
-        "link" => "createProduto.php"],
-        ["nome" => "Lista de Produtos",
-        "link" => "indexProdutos.php"],
-        ["nome" => "Produto",
-        "link" => "#"],
-        ["nome" => "Editar Produto",
-        "link" => "#"]];
 
 $email = "";
 $senha = "";
@@ -65,19 +57,7 @@ if($_POST){
             <img src="img/031-paw.png" alt="E-commerce Logo">
             <h2>PetShop</h2>
         </div>
-        <nav class="menu">
-            <ul>
-                <?php foreach($menu as $value): ?>
-                <li><a href="<?= $value['link'] ?>"><?= $value['nome'] ?></a></li>
-                <?php endforeach ?>
-            </ul>
-        </nav>
-        <nav class="login">
-            <ul>
-                <li><a href="createUsuario.php">Cadastre-se</a></li>
-                <li><a href="loginUsuario.php">Login</a></li>
-            </ul>
-        </nav>
+       
     </header>
 
     <main>
@@ -103,20 +83,14 @@ if($_POST){
                 </form>
                 
                 <div class="imagem-fundo">
-                    <img src="img/044-paw-1.png" alt="certificado">
+                    <img src="img/049-assistant.png" alt="assistente">
                 </div>
 
         </div>
     </main>
 
     <footer>
-        <nav class="menu-footer">
-             <ul>
-                <?php foreach($menu as $value): ?>
-                <li><a href="<?= $value['link'] ?>"><?= $value['nome'] ?></a></li>
-                <?php endforeach ?>
-            </ul>
-            </nav>
+        <p>Copyright © Renata Rocha</p>
     </footer>
 </body>
 </html>

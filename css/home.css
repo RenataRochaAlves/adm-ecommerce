@@ -24,8 +24,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
 }
 
 /* aqui começa o header */
@@ -104,62 +102,63 @@ header nav ul li a:hover {
 
 main {
     display: flex;
+    height: auto;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 80px;
+    padding-top: 100px;
 }
 
-#conteudo {
-    display: flex;
-    width: 60%;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(246, 243, 252);
-    flex-flow: column nowrap;
-    padding: 10px;
-    padding-bottom: 120px;
-    margin-top: 120px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    color: rgb(112, 108, 117);
+main div {
+    width: calc(100% / 2 - 20px);
 }
 
-#conteudo h3{
+.imagem img {
+    width: 90%;
+}
+
+h3{
     font-family: avenirnext;
-    color: rgb(59, 43, 77);
-    font-size: 20px;
+    color: rgb(197, 152, 252);
+    font-size: 38px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
-
-/* aqui começa a lista de produtos */
-
-#conteudo table {
-    width: 80%;
-}
-
-table th, td{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    border-bottom: 1px solid rgb(211, 190, 235);
-}
-
-table th {
+div p{
     font-family: avenirnext;
     font-size: 16px;
-    color: rgb(154, 135, 175);
+    color: rgb(182, 143, 229);
 }
 
-table td:nth-child(5) {
-    text-align: center;
+
+button {
+    font-size: 14px;
+    font-family: avenirnext;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    background-color: #ff6039;
+    padding: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 30px;
+    white-space: nowrap;
 }
 
-table td a{
-    text-decoration: none;
-    color: rgb(154, 135, 175);
+button:hover{
+    background-color: #fc573b;
 }
 
+
+/* #home button:hover{
+    background-color: #5d96b8;
+}
+
+#conteudo button:hover {
+    background-color: #fc573b;
+} */
 
 /* aqui começa o footer */
 
@@ -176,3 +175,4 @@ footer p {
     color: white;
     font-family: avenirnext;
 }
+

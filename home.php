@@ -10,8 +10,8 @@ require('includes/functions.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mensagemSucesso.css">
-    <title>Acesso Negado | PetShop</title>
+    <link rel="stylesheet" href="css/home.css">
+    <title>Home | PetShop</title>
 </head>
 <body>
     <header>
@@ -28,14 +28,13 @@ require('includes/functions.php');
     </header>
 
     <main>
-        <div id="conteudo">
-            
-            <div class="mensagem">
-            <img src="img/033-bird-house.png" alt="casa de passarinho">
-            <h3>Essa página só está disponível para usuários logados!</h3>
-            </div>
+        <div class="imagem">
+            <img src="img/044-paw-1.png" alt="medalha animal">
+        </div>
+        <div class="info">
+            <h3>Site para a criação, edição e exclusão de produtos e usuários administradores do e-commerce PetShop</h3>
+            <p>Faça login para continuar</p>
             <a href="loginUsuario.php"><button>Fazer login</button></a>
-            
         </div>
     </main>
 

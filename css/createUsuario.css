@@ -243,26 +243,9 @@ footer {
     width: 100%;
     height: 100px;
     background-color: #71b0d4;
-    /* margin-top: 20%; */
 }
 
-.menu-footer {
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu-footer ul li {
-    display: inline;
-    list-style: none;
+footer p {
+    color: white;
     font-family: avenirnext;
-    color: white;
-    padding: 10px;
 }
-
-.menu-footer ul li a {
-    color: white;
-    text-decoration: none;
-}
-
