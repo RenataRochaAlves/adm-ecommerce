@@ -176,3 +176,76 @@ footer p {
     font-family: avenirnext;
 }
 
+
+/* aqui começam os media querys */
+
+@media (max-width: 1279px){
+    main {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    header img {
+        width: 50px;
+    }
+
+    main div p, button, header h2, header nav ul li, footer p {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    main {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    main div {
+        width: calc(100% - 20px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .imagem img {
+        width: 80%;
+    }
+
+    h3 {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px){
+    header img {
+        width: 40px;
+    }
+
+    main div p, button, header h2, header nav ul li, footer p {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 50px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .imagem img {
+        width: 90%;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    main div {
+        width: calc(100% - 10px);
+    }
+
+    button {
+        padding-right: 120px;
+        padding-left: 120px;
+    }
+}

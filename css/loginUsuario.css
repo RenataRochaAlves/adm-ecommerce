@@ -208,3 +208,139 @@ footer p {
     color: white;
     font-family: avenirnext;
 }
+
+/* aqui começam os media querys */
+
+@media (max-width: 1279px){
+
+    header img {
+        width: 50px;
+    }
+
+    header h2, header nav ul li, footer p {
+        font-size: 20px;
+    }
+
+    #conteudo {
+        width: 70%;
+        margin-top: 150px;
+    }
+
+    header h2, header nav ul li, footer p {
+        font-size: 18px;
+    }
+
+    html, #conteudo button {
+        font-size: 20px;
+    }
+
+    #conteudo div input{
+        font-size: 18px;
+        padding-left: 15px;
+    }
+
+    #conteudo h3 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px){
+    #conteudo {
+        width: 80%;
+        margin-top: 120px;
+    }
+
+    header h2, header nav ul li, footer p {
+        font-size: 16px;
+    }
+
+    html, #conteudo button {
+        font-size: 16px;
+    }
+
+    #conteudo div input{
+        font-size: 16px;
+        padding-left: 15px;
+    }
+
+    #conteudo h3 {
+        font-size: 24px;
+    }
+    
+    #conteudo div, #conteudo button {
+        width: 60%;
+    }
+}
+
+@media (max-width: 480px){
+    header img {
+        width: 40px;
+    }
+
+    header h2, header nav ul li, footer p {
+        font-size: 16px;
+    }
+
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+        z-index: 0;
+        background-color: transparent;
+        position: static;
+        width: 100%;
+    }
+    
+    header div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    header img {
+        width: 150px;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    html {
+        font-size: 20px;
+    }
+
+    header h2 {
+        font-size: 24px;
+        color: white;
+    }
+
+    #conteudo {
+        width: 100%;
+        margin-top: 30px;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        padding-top: 20px;
+    }
+
+    header h2, header nav ul li, footer p {
+        font-size: 16px;
+    }
+
+    html, #conteudo button {
+        font-size: 16px;
+    }
+
+    #conteudo div input{
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    #conteudo h3 {
+        font-size: 24px;
+    }
+    
+    #conteudo div, #conteudo button {
+        width: 80%;
+    }
+
+}
