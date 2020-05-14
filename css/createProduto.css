@@ -337,10 +337,10 @@ footer p {
     
     header nav ul li{
         display: block;
-        font-size: 18px;
-        margin-top: 20px;
+        font-size: 16px;
+        margin-top: 10px;
         border-radius: 10px;
-        padding: 10px;
+        padding: 8px;
         background-color: #fc573b;
         width: 100%;
     }
@@ -370,7 +370,7 @@ footer p {
 
 @media (max-width: 480px){
     html {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #conteudo {

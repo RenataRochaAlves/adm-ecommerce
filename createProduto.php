@@ -107,8 +107,8 @@ if($_POST){
                 <div id="nome">
                 <label for="nomeProduto">Nome do Produto</label><br>
                     <input type="text" name="nomeProduto" id="nomeProduto" value="<?= $nome ?>" placeholder="Arranhador para gatos" required>
+                    <?= ($nomeOk? '' : '<span>O nome é muito curto')?><br>
                 </div>
-                    <!-- <?php ($nomeOk? '' : '<span>O nome é muito curto')?><br> -->
 
                 <div id="descricao">
                 <label for="descricaoProduto">Descrição do Produto</label><br>
@@ -118,7 +118,7 @@ if($_POST){
                 <div id="preco">
                 <label for="precoProduto">Preço do Produto</label><br>
                     <input type="number" step=0.01 name="precoProduto" id="precoProduto" value="<?= $preco ?>" placeholder="35,99" required><br>
-                    <!-- <?php ($precoOk? '' : '<span class="erro">O preço não é numérico')?><br> -->
+                    <?= ($precoOk? '' : '<span class="erro">O preço não é numérico')?><br>
                 </div>
 
                 <div class="fotoProduto">
@@ -129,8 +129,9 @@ if($_POST){
 
                         <img src="img/imagem.png" id="foto-carregada"><br>
                     </label>
+                    <?= ($imagemOk? '' : '<span class="erro">A imagem é inválida')?><br>
                 </div>
-                <?php ($imagemOk? '' : '<span class="erro">A imagem é inválida')?><br>
+                
 
                 <div>
                 <button type="submit">Enviar</button>

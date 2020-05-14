@@ -276,6 +276,7 @@ footer p {
 
     #conteudo button {
         width: 100%;
+        font-size: 16px;
     }
 
     header {
@@ -324,10 +325,10 @@ footer p {
     
     header nav ul li{
         display: block;
-        font-size: 18px;
-        margin-top: 20px;
+        font-size: 16px;
+        margin-top: 10px;
         border-radius: 10px;
-        padding: 10px;
+        padding: 8px;
         background-color: #fc573b;
         width: 100%;
     }
@@ -370,8 +371,12 @@ footer p {
         margin-top: 20px;
     }
     
+    .info h5 {
+        font-size: 16px;
+    }
+    
     .info h4, .info p {
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .info h4 {

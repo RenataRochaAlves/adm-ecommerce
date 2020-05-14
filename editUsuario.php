@@ -74,7 +74,7 @@ if($_POST){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/createUsuario.css">
-    <title>Criar Usuário | PetShop</title>
+    <title>Editar Usuário | PetShop</title>
 </head>
 <body>
 <header>
@@ -99,7 +99,7 @@ if($_POST){
     <main>
         <div id="conteudo">
 
-            <h3>Criar Usuário</h3>
+            <h3>Editar Usuário</h3>
 
             <form method="POST">
 
